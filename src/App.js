@@ -8,14 +8,17 @@ import Editprofile from "./components/Editprofile";
 import Signup from "./components/Signup";
 import LoginPage from "./components/LoginPage";
 import Forgotpassword from "./components/Forgotpassword";
+import { useState } from "react";
 
 function App() {
+  const [openNav, setOpenNav] = useState(false);
+
   return (
     <AuthProvider>
       <div>
-        <TitleBar />
+        <TitleBar openNav={openNav} setOpenNav={setOpenNav} />
         <div className="flex">
-          <Navbar />
+          <Navbar openNav={openNav} />
           <Routes>
             <Route
               exact
